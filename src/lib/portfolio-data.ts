@@ -154,7 +154,7 @@ export const documentaryProjects: PortfolioProject[] = [
 
 export const brandAds: BrandAd[] = [
     { brand: 'Madhaven Jewellery', description: 'Luxury bridal campaign blending tradition and modern elegance.' },
-    { brand: 'Gabriel Automobiles', description: 'Performance-focused automotive brand commercial with high-impact visuals.' },
+    { brand: 'Gabriel India — Anand Group', description: 'Prestigious automotive brand campaign for Gabriel India Limited, the flagship company of the ANAND Group — India\'s leading ride-control manufacturer with 75% commercial vehicle market share. High-impact corporate and product visuals.' },
     { brand: 'Anand Group of Companies', description: 'Automobile division corporate identity and promotional campaigns.' },
     { brand: 'Youvathi Cookies', description: 'FMCG product launch campaign with vibrant lifestyle storytelling.' },
     { brand: 'JK Hair & Skin Care', description: 'Beauty and personal care brand film with cinematic product reveals.' },

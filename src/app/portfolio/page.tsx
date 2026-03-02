@@ -91,7 +91,7 @@ export default function PortfolioPage() {
                     <h2 className="text-3xl md:text-4xl font-display font-bold uppercase tracking-tighter text-white mb-4">Trusted by Leaders</h2>
                 </div>
                 <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto px-8">
-                    {['Government of TN', 'Pothys', 'Radio Mirchi', 'Queen Mira School', 'Gabriel Auto', 'Madhaven Jewellery', 'Anand Group', 'Rafithub Fitness'].map((brand) => (
+                    {['Government of TN', 'Pothys', 'Radio Mirchi', 'Queen Mira School', 'Gabriel India (Anand Group)', 'Madhaven Jewellery', 'Rafithub Fitness'].map((brand) => (
                         <span key={brand} className="px-5 py-2.5 rounded-full border border-white/[0.06] bg-white/[0.02] font-mono text-[10px] uppercase tracking-widest text-white/30 hover:border-ccu-accent/30 hover:text-white transition-all duration-500 cursor-default">
                             {brand}
                         </span>

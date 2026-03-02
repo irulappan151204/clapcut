@@ -32,7 +32,7 @@ const roles = [
     { title: 'Tech Visionary', desc: 'Driving the adoption of Next.js, Framer Motion, and GSAP for web development, pushing CCU into elite digital territory.', icon: '💻' },
 ];
 
-const brands = ['Madhaven Jewellery', 'Gabriel Automobiles', 'Queen Mira International School', 'Anand Group', 'Government of TN', 'Radio Mirchi', 'Pothys', 'Rafithub Fitness', 'Ganesh Brand Foods', 'JK Hair & Skin Care', 'Youvathi Cookies'];
+const brands = ['Gabriel India (Anand Group)', 'Madhaven Jewellery', 'Queen Mira International School', 'Anand Group', 'Government of TN', 'Radio Mirchi', 'Pothys', 'Rafithub Fitness', 'Ganesh Brand Foods', 'JK Hair & Skin Care', 'Youvathi Cookies'];
 
 const philosophy = [
     { title: 'Art Over Commerce', desc: "Every project is treated as a creative canvas. We never cut corners on quality, even when budgets are tight. The work must move audiences.", icon: '🎨' },

@@ -307,7 +307,7 @@ export default function Home() {
           <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#030303] to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#030303] to-transparent z-10 pointer-events-none" />
           <div className="flex gap-12 px-8 animate-[slideLeft_30s_linear_infinite] whitespace-nowrap">
-            {['Madhaven Jewellery', 'Gabriel Automobiles', 'Queen Mira International School', 'Anand Group', 'Government of TN', 'Radio Mirchi', 'Pothys', 'Rafithub Fitness', 'Ganesh Brand Foods', 'JK Hair & Skin Care', 'Youvathi Cookies', 'Madhaven Jewellery', 'Gabriel Automobiles', 'Queen Mira International School', 'Anand Group', 'Government of TN', 'Radio Mirchi', 'Pothys'].map((brand, i) => (
+            {['Gabriel India (Anand Group)', 'Madhaven Jewellery', 'Queen Mira International School', 'Government of TN', 'Radio Mirchi', 'Pothys', 'Rafithub Fitness', 'Ganesh Brand Foods', 'JK Hair & Skin Care', 'Youvathi Cookies', 'Gabriel India (Anand Group)', 'Madhaven Jewellery', 'Queen Mira International School', 'Government of TN', 'Radio Mirchi', 'Pothys'].map((brand, i) => (
               <span key={i} className="font-display text-xl md:text-2xl uppercase tracking-widest font-bold text-white/[0.12] hover:text-white/30 transition-colors duration-500 cursor-default flex-shrink-0">
                 {brand}
               </span>
