@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { documentaryProjects } from '@/lib/portfolio-data';
 import RevealText from '@/components/ui/RevealText';
 
@@ -30,9 +31,18 @@ export default function DocumentaryShowcase() {
                         >
                             {/* Image Side */}
                             <div className={`relative aspect-video rounded-2xl overflow-hidden bg-[#111] border border-white/[0.06] ${i % 2 !== 0 ? 'md:order-2' : ''}`}>
+                                {doc.image && (
+                                    <Image
+                                        src={doc.image}
+                                        alt={doc.title}
+                                        fill
+                                        className="object-cover mix-blend-luminosity opacity-80 group-hover:opacity-100 transition-opacity duration-700"
+                                        sizes="(max-width: 768px) 100vw, 50vw"
+                                    />
+                                )}
                                 <div className="absolute inset-0 bg-gradient-to-br from-ccu-accent/10 to-transparent" />
                                 <div className="absolute inset-0 flex items-center justify-center">
-                                    <span className="font-mono text-xs uppercase tracking-widest text-white/20">Documentary Still</span>
+                                    <span className={`font-mono text-xs uppercase tracking-widest ${doc.image ? 'text-white/40 drop-shadow-md' : 'text-white/20'}`}>Documentary Still</span>
                                 </div>
                             </div>
 

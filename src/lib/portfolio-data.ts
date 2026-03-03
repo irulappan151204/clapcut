@@ -15,6 +15,7 @@ export interface PortfolioProject {
     status?: string;
     collaboration?: string;
     impact?: string;
+    image?: string;
 }
 
 export interface BrandAd {
@@ -133,6 +134,7 @@ export const documentaryProjects: PortfolioProject[] = [
         description: 'Environmental documentary highlighting water conservation, sustainable practices, and community action.',
         type: 'Environmental Documentary',
         awards: true,
+        image: '/doc_save_water.png',
     },
     {
         id: 'women-empowerment',
@@ -141,6 +143,7 @@ export const documentaryProjects: PortfolioProject[] = [
         description: 'Award-winning visual narrative advocating gender equality, community transformation, and breaking barriers.',
         type: 'Social Documentary',
         awards: true,
+        image: '/doc_women_empowerment.png',
     },
     {
         id: 'child-labour',
@@ -149,6 +152,7 @@ export const documentaryProjects: PortfolioProject[] = [
         description: 'Social reform documentary exposing child labor issues and advocating for education and protection of minors.',
         type: 'Social Reform Documentary',
         awards: true,
+        image: '/doc_child_labour.png',
     },
 ];
 

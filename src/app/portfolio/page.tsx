@@ -5,6 +5,7 @@ import AnimatedFooter from "@/components/sections/AnimatedFooter";
 import RevealText from "@/components/ui/RevealText";
 import AnthemShowcase from "@/components/sections/AnthemShowcase";
 import DocumentaryShowcase from "@/components/sections/DocumentaryShowcase";
+import BrandsWeElevated from "@/components/sections/BrandsWeElevated";
 import CommercialAdsShowcase from "@/components/sections/CommercialAdsShowcase";
 import EventShowcase from "@/components/sections/EventShowcase";
 import Link from "next/link";
@@ -77,6 +78,9 @@ export default function PortfolioPage() {
                     </div>
                 </motion.div>
             </section>
+
+            {/* Brands We Elevated */}
+            <BrandsWeElevated />
 
             {/* Showcase Sections */}
             <AnthemShowcase />
