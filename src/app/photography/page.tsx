@@ -8,11 +8,11 @@ import { motion } from "framer-motion";
 
 const genres = [
     { title: 'Commercial & Product', desc: 'Luxury product photography with precise lighting, composition, and color grading for maximum brand impact.' },
+    { title: 'Miniature & Model', desc: 'High-detail macro photography of custom-built miniature sets and physical models, capturing micro-world details with cinematic depth.' },
     { title: 'Event Coverage', desc: 'Government events, corporate summits, concerts, and cultural festivals captured with cinematic precision.' },
     { title: 'Portrait & Editorial', desc: 'Celebrity portraits, corporate headshots, and fashion editorial shoots with studio-grade production.' },
-    { title: 'Architectural & Interior', desc: 'Real estate, hospitality, and office space photography with wide-angle mastery and HDR processing.' },
-    { title: 'Food & Lifestyle', desc: 'Restaurant menus, food brands, and lifestyle campaigns that make viewers taste the experience.' },
     { title: 'Candid & Documentary', desc: 'Authentic moments captured with journalistic instinct — weddings, cultural events, and human stories.' },
+    { title: 'Architectural & Interior', desc: 'Real estate, hospitality, and office space photography with wide-angle mastery and HDR processing.' },
 ];
 
 const equipment = ['Canon EOS R5', 'Sony A7 IV', 'DJI Mavic 3 Pro', 'Profoto B10+', 'Capture One Pro', 'Adobe Lightroom'];
@@ -22,6 +22,15 @@ const stats = [
     { num: '50+', label: 'Events Covered' },
     { num: '20+', label: 'Brand Clients' },
     { num: '4K/8K', label: 'Resolution Output' },
+];
+
+const galleryItems = [
+    { src: '/miniature.png', title: 'Miniature Set Study', category: 'Miniature' },
+    { src: '/Two wheeler.jpg', title: 'Two Wheeler Campaign', category: 'Commercial' },
+    { src: '/founder.jpg', title: 'Founder Portrait J. Jeyabal', category: 'Portrait' },
+    { src: '/doc_women_empowerment.png', title: 'Women Empowerment Still', category: 'Documentary' },
+    { src: '/doc_save_water.png', title: 'Save Water Campaign Still', category: 'Documentary' },
+    { src: '/doc_child_labour.png', title: 'Social Advocacy Still', category: 'Documentary' },
 ];
 
 export default function PhotographyPage() {
@@ -40,7 +49,7 @@ export default function PhotographyPage() {
                     Our commercial and cinematic photography captures the visceral emotion of your brand. Every frame is a composed narrative engineered for high-impact visual campaigns.
                 </p>
                 <div className="flex flex-wrap gap-3 mb-16">
-                    {['Commercial', 'Portraiture', 'Events', 'Documentary', 'Product', 'Aerial'].map((tag) => (
+                    {['Commercial', 'Portraiture', 'Events', 'Documentary', 'Product', 'Aerial', 'Miniatures'].map((tag) => (
                         <span key={tag} className="px-4 py-2 border border-white/10 rounded-full font-mono text-[10px] uppercase tracking-widest text-white/40">{tag}</span>
                     ))}
                 </div>
@@ -91,13 +100,13 @@ export default function PhotographyPage() {
                 </div>
             </section>
 
-            {/* Gallery Placeholder */}
+            {/* Gallery */}
             <section className="py-24 border-t border-white/[0.06] relative z-10">
                 <div className="max-w-7xl mx-auto px-8">
                     <p className="font-mono text-[10px] uppercase tracking-widest text-ccu-accent mb-4">Gallery</p>
                     <h2 className="text-3xl md:text-4xl font-display font-bold uppercase tracking-tighter text-white mb-12">Recent Work</h2>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                        {[...Array(6)].map((_, i) => (
+                        {galleryItems.map((item, i) => (
                             <motion.div
                                 key={i}
                                 initial={{ opacity: 0, scale: 0.95 }}
@@ -106,9 +115,15 @@ export default function PhotographyPage() {
                                 transition={{ delay: i * 0.05 }}
                                 className={`${i % 3 === 0 ? 'aspect-[3/4]' : i % 3 === 1 ? 'aspect-square' : 'aspect-[4/5]'} rounded-xl border border-white/[0.06] bg-white/[0.02] overflow-hidden group relative`}
                             >
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                    <span className="font-mono text-[10px] uppercase tracking-widest text-white/15">Shot {String(i + 1).padStart(2, '0')}</span>
+                                <img
+                                    src={item.src}
+                                    alt={item.title}
+                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0 opacity-80 group-hover:opacity-100"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6" />
+                                <div className="absolute bottom-6 left-6 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                                    <span className="font-mono text-[8px] uppercase tracking-widest text-ccu-accent mb-1 block">{item.category}</span>
+                                    <h4 className="text-sm font-display font-bold uppercase tracking-tight text-white">{item.title}</h4>
                                 </div>
                             </motion.div>
                         ))}

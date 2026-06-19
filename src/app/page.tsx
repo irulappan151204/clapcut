@@ -26,6 +26,7 @@ const services = [
   { num: '06', icon: '🎪', title: 'Event Management', desc: 'Large-scale cultural events, government functions, elite weddings, and brand activations at any scale.', href: '/contact', accent: 'from-emerald-500/15 to-emerald-500/[0.02]', bgImage: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=1200' },
   { num: '07', icon: '📱', title: 'Digital Media', desc: 'End-to-end social media strategy, influencer campaigns, paid ads optimization, and reputation management.', href: '/services#social-media', accent: 'from-cyan-500/15 to-cyan-500/[0.02]', bgImage: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=1200' },
   { num: '08', icon: '✨', title: 'Branding Solutions', desc: '360-degree branding: newspaper ads, theatre branding, hoardings, bus/train wraps, and event backdrops.', href: '/contact', accent: 'from-pink-500/15 to-pink-500/[0.02]', bgImage: 'https://images.unsplash.com/photo-1434626881859-194d67b2b86f?auto=format&fit=crop&q=80&w=1200' },
+  { num: '09', icon: '🧱', title: 'Miniature & Model Shoots', desc: 'Custom scale model crafting, high-precision macro cinematography, and immersive micro-world creation.', href: '/services#miniature', accent: 'from-amber-600/15 to-amber-600/[0.02]', bgImage: '/miniature.png' },
 ];
 
 const whyChoose = [
@@ -136,9 +137,9 @@ export default function Home() {
             <p className="text-white/30 font-sans max-w-xl mx-auto">Six specialized divisions working in concert to deliver world-class results.</p>
           </div>
 
-          {/* Bento Grid — 2 large + 4 compact */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-            {services.slice(0, 2).map((service) => (
+          {/* Bento Grid — 3 large + 6 compact */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
+            {services.slice(0, 3).map((service) => (
               <Link key={service.num} href={service.href} className={`relative p-10 md:p-12 rounded-2xl border border-white/[0.06] bg-[#030303] overflow-hidden group transition-all duration-700 hover:border-white/15 min-h-[280px] flex flex-col justify-end`}>
                 <img src={service.bgImage} alt={service.title} className="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000 grayscale group-hover:grayscale-0 opacity-40 mix-blend-overlay z-0" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-[#030303]/80 to-transparent z-0" />
@@ -155,8 +156,8 @@ export default function Home() {
               </Link>
             ))}
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {services.slice(2).map((service) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {services.slice(3).map((service) => (
               <Link key={service.num} href={service.href} className={`relative p-8 rounded-2xl border border-white/[0.06] bg-[#030303] overflow-hidden group transition-all duration-700 hover:border-white/15`}>
                 <img src={service.bgImage} alt={service.title} className="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000 grayscale opacity-20 group-hover:opacity-40 mix-blend-overlay z-0" />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#030303] z-0" />

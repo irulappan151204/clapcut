@@ -18,6 +18,7 @@ const services = [
     { title: 'Event Management', description: 'Large-scale cultural events, government functions, elite weddings, and brand activations. Protocol-grade execution at every scale.', link: '/contact', number: '06', icon: '🎪', tags: ['Concerts', 'Government', 'Weddings'], accent: 'from-emerald-500/15 to-emerald-500/[0.02]', bgImage: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=1200' },
     { title: 'Digital Media', description: 'End-to-end social media strategy, celebrity page management, influencer campaigns, paid ads optimization, and reputation management.', link: '#social-media', number: '07', icon: '📱', tags: ['Social Strategy', 'Influencer', 'Analytics'], accent: 'from-cyan-500/15 to-cyan-500/[0.02]', bgImage: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=1200' },
     { title: 'Branding Solutions', description: '360-degree branding: newspaper ads, theatre branding, hoardings, bus/train wraps, and event backdrop execution.', link: '/contact', number: '08', icon: '✨', tags: ['Outdoor Media', 'Print', 'Identity'], accent: 'from-pink-500/15 to-pink-500/[0.02]', bgImage: 'https://images.unsplash.com/photo-1434626881859-194d67b2b86f?auto=format&fit=crop&q=80&w=1200' },
+    { title: 'Miniature & Model Shoots', description: 'Physical scale model crafting, custom set designs, and high-precision macro cinematography. Constructing detailed micro-worlds that deliver massive cinematic scale.', link: '/services#miniature', number: '09', icon: '🧱', tags: ['Set Design', 'Macro Shoots', 'Scale Models'], accent: 'from-amber-600/15 to-amber-600/[0.02]', bgImage: '/miniature.png' },
 ];
 
 const methodology = [
@@ -247,8 +248,8 @@ export default function ServicesPage() {
                     ))}
                 </div>
 
-                {/* Bottom 3 */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {/* Bottom 4 */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     {services.slice(5).map((service, i) => (
                         <motion.div key={service.number} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05, duration: 0.5 }}>
                             <Link href={service.link} className={`relative block p-8 rounded-2xl border border-white/[0.06] bg-[#030303] overflow-hidden group transition-all duration-700 hover:border-white/15 min-h-[250px] flex flex-col justify-between`}>
@@ -422,6 +423,104 @@ export default function ServicesPage() {
                                 )}
                             </motion.div>
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Miniature & Model Shoots Deep Dive */}
+            <section id="miniature" className="py-32 relative z-10 border-t border-white/[0.06] overflow-hidden">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-amber-500/[0.02] rounded-full blur-[200px] pointer-events-none" />
+                <div className="px-8 max-w-7xl mx-auto">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        <motion.div 
+                            initial={{ opacity: 0, x: -30 }} 
+                            whileInView={{ opacity: 1, x: 0 }} 
+                            viewport={{ once: true }} 
+                            transition={{ duration: 0.8 }}
+                            className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-white/[0.06] group shadow-2xl"
+                        >
+                            <img 
+                                src="/miniature.png" 
+                                alt="Miniature Model Production" 
+                                className="absolute inset-0 w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000 grayscale group-hover:grayscale-0 opacity-80 group-hover:opacity-100" 
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent pointer-events-none" />
+                        </motion.div>
+                        <motion.div 
+                            initial={{ opacity: 0, x: 30 }} 
+                            whileInView={{ opacity: 1, x: 0 }} 
+                            viewport={{ once: true }} 
+                            transition={{ duration: 0.8 }}
+                        >
+                            <div className="border-l-2 border-ccu-accent pl-6 mb-8">
+                                <p className="font-mono text-[10px] uppercase tracking-widest text-white/40 mb-2">Division Showcase / 09</p>
+                                <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tighter text-white mb-2">
+                                    Miniature &amp; <span className="text-ccu-accent">Model Shoots.</span>
+                                </h2>
+                                <p className="font-mono text-xs uppercase tracking-widest text-ccu-accent">Physical Micro-Worlds</p>
+                            </div>
+                            <p className="text-base text-white/50 font-sans leading-relaxed mb-6">
+                                We craft detailed micro-universes. Our specialized miniature division designs and builds physical scale models, landscapes, and custom structures, capturing them with high-precision macro lens setups to deliver grand cinematic scale.
+                            </p>
+                            <p className="text-xs text-white/35 font-sans leading-relaxed mb-8">
+                                Tactile models bring an irreplaceable organic depth. Combined with controlled lighting rigs and motion tracking, we create high-impact, award-winning visual scenes that merge craftsmanship and cinematography.
+                            </p>
+                            <div className="flex flex-wrap gap-2">
+                                {['Physical Set Design', 'Macro Cinematography', 'Precision Modeling', 'SFX Environments'].map((tag) => (
+                                    <span key={tag} className="px-3 py-1.5 rounded-full text-[9px] font-mono uppercase tracking-widest border border-white/[0.08] text-white/35 bg-white/[0.01]">{tag}</span>
+                                ))}
+                            </div>
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Featured AI Video Campaign Showcase */}
+            <section className="py-32 bg-[#030303] border-t border-white/[0.06] relative z-10 overflow-hidden">
+                <div className="absolute top-1/2 right-10 w-[600px] h-[600px] bg-ccu-accent/[0.02] rounded-full blur-[200px] pointer-events-none" />
+                <div className="px-8 max-w-7xl mx-auto">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        <motion.div 
+                            initial={{ opacity: 0, y: 30 }} 
+                            whileInView={{ opacity: 1, y: 0 }} 
+                            viewport={{ once: true }} 
+                            transition={{ duration: 0.8 }}
+                            className="lg:col-span-5"
+                        >
+                            <div className="border-l-2 border-ccu-accent pl-6 mb-8">
+                                <p className="font-mono text-[10px] uppercase tracking-widest text-white/40 mb-2">Campaign Case Study</p>
+                                <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter text-white mb-2">
+                                    Pioneer <span className="text-ccu-accent">Corp AI.</span>
+                                </h2>
+                                <p className="font-mono text-xs uppercase tracking-widest text-ccu-accent">Coimbatore, India</p>
+                            </div>
+                            <p className="text-base text-white/50 font-sans leading-relaxed mb-6">
+                                We designed this high-retention AI product commercial for the global realme campaign. Featuring dynamic neural motion pacing and automated scene synthesis to maximize viewer engagement.
+                            </p>
+                            <p className="text-xs text-white/35 font-sans leading-relaxed mb-8">
+                                This showcases how we leverage next-generation AI pipelines alongside professional post-production workflows to build premium commercials that demand to be seen.
+                            </p>
+                            <div className="flex flex-wrap gap-2">
+                                {['realme Promo', 'AI Generation', 'Dynamic Pacing', 'Automotive & Mobile'].map((tag) => (
+                                    <span key={tag} className="px-3 py-1.5 rounded-full text-[9px] font-mono uppercase tracking-widest border border-white/[0.08] text-white/35 bg-white/[0.01]">{tag}</span>
+                                ))}
+                            </div>
+                        </motion.div>
+                        <motion.div 
+                            initial={{ opacity: 0, scale: 0.95 }} 
+                            whileInView={{ opacity: 1, scale: 1 }} 
+                            viewport={{ once: true }} 
+                            transition={{ duration: 0.8 }}
+                            className="lg:col-span-7"
+                        >
+                            <div className="relative w-full aspect-video rounded-3xl overflow-hidden bg-black border border-ccu-accent/20 shadow-2xl group hover:border-ccu-accent/45 transition-colors duration-500">
+                                <video
+                                    src="/realme_sample.mp4"
+                                    controls
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                        </motion.div>
                     </div>
                 </div>
             </section>

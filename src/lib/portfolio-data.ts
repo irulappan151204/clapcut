@@ -22,6 +22,7 @@ export interface BrandAd {
     brand: string;
     description: string;
     youtubeId?: string;
+    videoUrl?: string;
 }
 
 export interface MajorEvent {
@@ -157,6 +158,7 @@ export const documentaryProjects: PortfolioProject[] = [
 ];
 
 export const brandAds: BrandAd[] = [
+    { brand: 'Pioneer Corporation Coimbatore', description: 'An ultra-premium AI-generated video campaign for realme (realme_sample), featuring dynamic motion kinetics and neural rendering.', videoUrl: '/realme_sample.mp4' },
     { brand: 'Madhaven Jewellery', description: 'Luxury bridal campaign blending tradition and modern elegance.' },
     { brand: 'Gabriel India — Anand Group', description: 'Prestigious automotive brand campaign for Gabriel India Limited, the flagship company of the ANAND Group — India\'s leading ride-control manufacturer with 75% commercial vehicle market share. High-impact corporate and product visuals.' },
     { brand: 'Anand Group of Companies', description: 'Automobile division corporate identity and promotional campaigns.' },

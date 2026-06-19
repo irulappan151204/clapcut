@@ -6,11 +6,12 @@ import { useCallback, useEffect } from 'react';
 interface VideoModalProps {
     isOpen: boolean;
     onClose: () => void;
-    youtubeId: string;
+    youtubeId?: string;
+    videoUrl?: string;
     title: string;
 }
 
-export default function VideoModal({ isOpen, onClose, youtubeId, title }: VideoModalProps) {
+export default function VideoModal({ isOpen, onClose, youtubeId, videoUrl, title }: VideoModalProps) {
     const handleKeyDown = useCallback((e: KeyboardEvent) => {
         if (e.key === 'Escape') onClose();
     }, [onClose]);
@@ -63,15 +64,24 @@ export default function VideoModal({ isOpen, onClose, youtubeId, title }: VideoM
                             {title}
                         </h2>
 
-                        {/* YouTube Player */}
-                        <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/50">
-                            <iframe
-                                src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1`}
-                                title={title}
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                                className="absolute inset-0 w-full h-full"
-                            />
+                        {/* Video Player */}
+                        <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/50 bg-black">
+                            {youtubeId ? (
+                                <iframe
+                                    src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1`}
+                                    title={title}
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                    className="absolute inset-0 w-full h-full"
+                                />
+                            ) : videoUrl ? (
+                                <video
+                                    src={videoUrl}
+                                    autoPlay
+                                    controls
+                                    className="absolute inset-0 w-full h-full object-contain"
+                                />
+                            ) : null}
                         </div>
                     </motion.div>
                 </motion.div>
